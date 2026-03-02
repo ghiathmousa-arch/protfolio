@@ -1,0 +1,32 @@
+const Cta = () => {
+  return (
+    <div className=" md:my-[40px] mx-auto md:px-6 ">
+    
+      <div className="relative w-[90%] md:w-[75%] rounded-5xl md:px-16 md:py-20 overflow-hidden inset-1 mx-auto"
+        style={{ backgroundColor: '#0C96E2', borderRadius: 32 }}>
+
+        {/* صورة الخلفية */}
+        <img src="/CTA.png" alt="" className="absolute -inset-1 left-2 bottom-[20px]   w-[100%] h-full object-fill " />
+
+        {/* المحتوى */}
+        <div className="relative z-10 flex flex-col md:flex md:flex-row items-center md:justify-between pt-[20px] pb-[20px] md:pt-0 md:pb-0">
+          <div className="flex flex-col gap-4 px-[20px] md:px-[100px] text-center ">
+            <h2 className="text-2xl pt-[15px] md:text-4xl font-bold text-white">Try me out, risk free!</h2>
+            <p className="text-white text-[13px] pt-[5px] ">
+              If you're not happy with the design after the first draft,<br />
+              I'll refund your deposit, <span className="font-bold text-white">no questions asked</span>
+            </p>
+          </div>
+          <div className="w-fit mt-[35px] md:pr-[30px] md:px-[20px] md:mt-[15px] md:mt-0 mb-[20px] md:mb-0">
+            <a href="#contact" className="px-5 md:px-9 py-3 rounded-lg bg-[#0C96E2] border border-none text-white font-medium flex items-center gap-2">
+              Contact <img src="/left.png" alt="" />
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+export default Cta;

@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #1D2130;
+}
+
+html, body {
+  @apply bg-white dark:bg-gray-900;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-timeline: auto;
+}

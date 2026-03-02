@@ -1,0 +1,21 @@
+<svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-42" y="-42" width="109.224" height="109"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(21px);clip-path:url(#bgblur_0_32_2291_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_i_32_2291)" data-figma-bg-blur-radius="42">
+<ellipse cx="12.6122" cy="12.5" rx="12.6122" ry="12.5" fill="#0C96E2"/>
+</g>
+<path d="M14.7141 10.4167C15.5503 10.4167 16.3523 10.7459 16.9436 11.332C17.5349 11.918 17.8671 12.7129 17.8671 13.5417V17.1875H15.7651V13.5417C15.7651 13.2654 15.6544 13.0005 15.4573 12.8051C15.2602 12.6098 14.9928 12.5 14.7141 12.5C14.4353 12.5 14.168 12.6098 13.9709 12.8051C13.7738 13.0005 13.6631 13.2654 13.6631 13.5417V17.1875H11.561V13.5417C11.561 12.7129 11.8932 11.918 12.4845 11.332C13.0758 10.7459 13.8778 10.4167 14.7141 10.4167Z" fill="white"/>
+<path d="M9.4592 10.9375H7.35717V17.1875H9.4592V10.9375Z" fill="white"/>
+<path d="M8.40819 9.37514C8.98865 9.37514 9.4592 8.90877 9.4592 8.33348C9.4592 7.75818 8.98865 7.29181 8.40819 7.29181C7.82773 7.29181 7.35717 7.75818 7.35717 8.33348C7.35717 8.90877 7.82773 9.37514 8.40819 9.37514Z" fill="white"/>
+<defs>
+<filter id="filter0_i_32_2291" x="-42" y="-42" width="109.224" height="109" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-5" dy="-5"/>
+<feGaussianBlur stdDeviation="125"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.02 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_32_2291"/>
+</filter>
+<clipPath id="bgblur_0_32_2291_clip_path" transform="translate(42 42)"><ellipse cx="12.6122" cy="12.5" rx="12.6122" ry="12.5"/>
+</clipPath></defs>
+</svg>
