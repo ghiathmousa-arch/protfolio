@@ -55,7 +55,7 @@ const NavBar = ({ theme, setTheme }) => {
         {/* icon nav and check mood */}
         <img
           onClick={() => setTheme(theme === 'dark' ? "light" : "dark")}
-          src={theme === "dark" ? "/Sun_fill.png" : "/moon.svg"}
+          src={theme === "dark" ? "Sun_fill.png" : "moon.svg"}
           alt="image"
           className="w-[24px] h-[30px]"
         />
