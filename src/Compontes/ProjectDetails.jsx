@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
 import projectsData from "./projectsData";
 import Dot from "./Dot";
-import Cards from "./Cards";
+import Button from "./Button";
+import Footer from './Footer';
+import ProjectsSlider from "./ProjectsSlider";
 
 const ProjectDetails = ({ theme }) => {
   const { id } = useParams();
@@ -68,16 +70,14 @@ const ProjectDetails = ({ theme }) => {
           </div>
 
           {/* زر GitHub */}
-          <a
-            href={project.github}
-            target="_blank"
-            className="inline-block mt-10 px-6 py-3 bg-[#0C96E2] text-white rounded-lg font-medium shadow-md hover:bg-[#0b7ec0] transition" >
-            Github Repo
-          </a>
+
+          <Button text="Github Repo" href={project.github} target="_blank" className="mt-5"
+          />
         </div>
       </div>
       <Dot theme={theme} />
-      
+      <ProjectsSlider theme={theme} />
+      <Footer />
     </section>
   );
 };

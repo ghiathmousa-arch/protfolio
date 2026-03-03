@@ -1,25 +1,27 @@
+import { img } from "../utils/getImageUrl";
+
 const icons = [
   {
-    img: "/facebook.svg",
+    img: img("facebook.svg"),
     to: "#"
   },
   {
-    img: "/twitter.svg",
+    img: img("twitter.svg"),
     to: "#"
   },
   {
-    img: "linkedin.svg",
+    img: img("linkedin.svg"),
     to: "#"
   },
   {
-    img: "/instagram.svg",
+    img: img("instagram.svg"),
     to: "#"
   },
-]
+];
 
 const Footer = ({ theme }) => {
   return (
-    <div  className="w-full flex flex-col md:flex-row items-center justify-between px-6 md:px-[70px] py-6 text-primary dark:text-white bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+    <div className="w-full flex flex-col md:flex-row items-center justify-between gap-2 mt-3 md:mt-0 px-6 md:px-17.5 py-6 text-primary dark:text-white bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
 
       {/* يسار */}
       <p className="font-normal text-sm">© 2026. All Rights Reserved</p>

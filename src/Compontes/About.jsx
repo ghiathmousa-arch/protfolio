@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { img } from "../utils/getImageUrl";
 
 const ProgressBar = ({ skill, percentage }) => {
   return (
@@ -37,7 +38,7 @@ const About = ({ theme }) => {
           transition={{ duration: 0.8 }}
           className="flex"
         >
-          <img src="/about.png" alt="" />
+          <img src={img("about.png")} alt="" />
         </motion.div>
 
         <motion.div

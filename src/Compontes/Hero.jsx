@@ -39,7 +39,17 @@ const Hero = ({ theme }) => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative flex items-center justify-center w-[45%] lg:w-[45%] md:w-[90%]">
             <img src={img('Circle.png')} alt="" className="w-[80%]" />
-            <img src={img('me.png')} alt="Ghiath" className="absolute bottom-0 -left-5 w-[90%] object-contain" />
+            <motion.img
+              src={img('me.png')}
+              alt="Ghiath"
+              className="absolute bottom-0 -left-5 w-[90%] object-contain"
+              animate={{ y: [0, -10, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
           </div>
         </div>
       </motion.div>

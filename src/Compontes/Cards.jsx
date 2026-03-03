@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import projectsData from "./projectsData";
+import { img } from "../utils/getImageUrl";
+import Button from "./Button";
 
 const Cards = ({ theme }) => {
   const navigate = useNavigate();
@@ -15,12 +17,13 @@ const Cards = ({ theme }) => {
           My Creative Works Latest
           <span className="text-[#0C96E2]"> Projects</span>
         </h1>
-
-        <a href="https://github.com/ghiathmousa-arch" target="_blank"
-          className="px-4 h-12.5 rounded-lg bg-[#0C96E2] text-white font-medium flex items-center gap-3 w-fit">
-          View Github
-          <img src="/topandleft.png" alt="" />
-        </a>
+        <Button
+          text="View Github"
+          target="_blank"
+          href="https://github.com/ghiathmousa-arch"
+          icon={img("topandleft.png")}
+          onClick={(e) => e.stopPropagation()}
+        />
       </div>
 
       <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -45,7 +48,7 @@ const Cards = ({ theme }) => {
               </div>
 
               <a href={item.github} target="_blank" onClick={(e) => e.stopPropagation()}>
-                <img src="/card.png" alt="" className="w-7 h-7" />
+                <img src={img("card.png")} alt="" className="w-7 h-7" />
               </a>
             </div>
 

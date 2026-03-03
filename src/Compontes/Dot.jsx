@@ -1,9 +1,11 @@
+import { img } from "../utils/getImageUrl";
+
 const Dot = ({ theme }) => {
   {/*dark and light */ }
   const lineColor = theme === 'dark' ? '#ffffff' : '#1D2130';
 
   return (
-    <div className="flex justify-center items-center gap-1 bg-white dark:bg-gray-900">
+    <div className="mt-3 flex justify-center items-center gap-1 bg-white dark:bg-gray-900">
 
       {/* الخط الأيسر */}
       <div
@@ -14,7 +16,7 @@ const Dot = ({ theme }) => {
       />
 
       {/* النقطة في المنتصف */}
-      <img src="/dot1.png" alt="" />
+      <img src={img("dot1.png")} alt="" />
 
       {/* الخط الأيمن */}
       <div
