@@ -35,7 +35,7 @@ const Cta = () => {
               viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Try me out, risk free!
+              Let's Work Together!
             </motion.h2>
 
             {/* حركة الوصف من اليسار */}
@@ -46,9 +46,7 @@ const Cta = () => {
               viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              If you're not happy with the design after the first draft,<br />
-              I'll refund your deposit,{" "}
-              <span className="font-bold text-white">no questions asked</span>
+              Have a project in mind? I'd love to help you build it. Let's discuss your idea and bring it to life.
             </motion.p>
           </div>
 

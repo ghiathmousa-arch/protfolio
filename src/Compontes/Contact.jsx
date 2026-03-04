@@ -1,9 +1,14 @@
-import { motion } from "framer-motion";
 import { img } from "../utils/getImageUrl";
 import Button from "./Button";
 
-const Contact = ({ theme }) => {
+// ─── كلاس مشترك لحقول الإدخال ─────────────────────────
+const inputClass =
+  "w-full px-4 py-3 rounded-lg border border-[#BEC0BF]/30 dark:border-gray-600 bg-white dark:bg-gray-900 outline-none focus:border-[#0C96E2]";
 
+// ─── كومبوننت قسم التواصل ──────────────────────────────
+const Contact = () => {
+
+  // بيانات كروت التواصل: الهاتف، الإيميل، والموقع
   const images = [
     {
       title: "Call me",
@@ -23,76 +28,77 @@ const Contact = ({ theme }) => {
       img: img("location.png"),
       href: "https://maps.google.com/?q=Damascus,Syria",
     },
-  ]
+  ];
 
   return (
-    <section id="contact" className="md:mx-18 md:my-23 w-full h-auto text-primary dark:text-white bg-white dark:bg-gray-900">
-
-      {/* عنوان القسم - دخول من فوق */}
-      <motion.div
-        className="text-center md:text-left mb-13"
-        initial={{ y: -30, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.6 }}
-      >
-        <h3 className="text-[12px] text-[#0C96E2] font-medium md:text-xl mb-2">Contact</h3>
-        <h1 className="text-[20px] font-semibold md:text-4xl">Let's Discuss Your <span className="text-[#0C96E2]">Project</span></h1>
-      </motion.div>
+    <section
+      id="contact"
+      className="w-full max-w-full overflow-hidden py-16 px-6 md:px-16 text-primary dark:text-white bg-white dark:bg-gray-900"
+    >
+      {/* عنوان القسم */}
+      <div className="text-center md:text-left mb-10">
+        <h3 className="text-sm text-[#0C96E2] font-medium md:text-xl mb-2">
+          Contact
+        </h3>
+        <h1 className="text-xl font-semibold md:text-4xl">
+          Let's Discuss Your <span className="text-[#0C96E2]">Project</span>
+        </h1>
+      </div>
 
       <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10">
 
-        {/* كروت التواصل - دخول من اليسار */}
-        <motion.div
-          className="mx-5 md:mx-0 md:w-[40%] flex flex-col"
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        {/* كروت التواصل - هاتف / إيميل / موقع */}
+        <div className="w-full md:w-[35%] flex flex-col">
           {images.map((imag, index) => (
-            <a key={index} href={imag.href} target="_blank" rel="noopener noreferrer"
-              className="flex gap-5 mb-5 cursor-pointer hover:opacity-80 transition-opacity">
-              <div className="w-[61px] h-[56px] rounded-lg bg-[#0C96E2] flex items-center justify-center">
-                <img src={imag.img} alt="" />
+            <a
+              key={index}
+              href={imag.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-5 mb-5 hover:opacity-80 transition-opacity"
+            >
+              {/* أيقونة الكارد */}
+              <div className="w-[61px] h-[56px] rounded-lg bg-[#0C96E2] flex items-center justify-center flex-shrink-0">
+                <img src={imag.img} alt={imag.title} />
               </div>
+
+              {/* نص الكارد */}
               <div>
                 <h4 className="text-[#92929D]">{imag.title}</h4>
                 <p>{imag.dis}</p>
               </div>
             </a>
           ))}
-        </motion.div>
+        </div>
 
-        {/* فورم التواصل - دخول من اليمين */}
-        <motion.div
-          className="mx-5 md:mx-0 md:w-[55%] flex flex-col gap-4"
-          initial={{ x: 50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <div className="flex gap-4">
-            <input type="text" placeholder="Full name"
-              className="w-full px-4 py-3 rounded-lg border border-[#BEC0BF] border-opacity-30 dark:border-gray-600 bg-white dark:bg-gray-800 outline-none focus:border-[#0C96E2]" />
-            <input type="email" placeholder="Your email"
-              className="w-full px-4 py-3 rounded-lg border border-[#BEC0BF] border-opacity-30 dark:border-gray-600 bg-white dark:bg-gray-800 outline-none focus:border-[#0C96E2]" />
+        {/* فورم التواصل */}
+        <div className="w-full md:w-[60%] flex flex-col gap-4">
+
+          {/* حقلا الاسم والإيميل جنب بعض */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <input type="text" placeholder="Full name" className={inputClass} />
+            <input type="email" placeholder="Your email" className={inputClass} />
           </div>
 
-          <input type="tel" placeholder="Phone number"
-            className="w-full px-4 py-3 rounded-lg border border-[#BEC0BF] border-opacity-30 dark:border-gray-600 bg-white dark:bg-gray-800 outline-none focus:border-[#0C96E2]" />
+          {/* حقل رقم الهاتف */}
+          <input type="tel" placeholder="Phone number" className={inputClass} />
 
-          <textarea placeholder="Message" rows={6}
-            className="w-full px-4 py-3 rounded-lg border border-[#BEC0BF] border-opacity-30 dark:border-gray-600 bg-white dark:bg-gray-800 outline-none focus:border-[#0C96E2] resize-none" />
+          {/* حقل الرسالة */}
+          <textarea
+            placeholder="Message"
+            rows={6}
+            className={`${inputClass} resize-none`}
+          />
 
-          <Button text="Send Message" />
-
-        </motion.div>
+          {/* زر الإرسال */}
+          <div className="w-fit">
+            <Button text="Send Message" />
+          </div>
+        </div>
 
       </div>
-
     </section>
   );
-}
+};
 
 export default Contact;

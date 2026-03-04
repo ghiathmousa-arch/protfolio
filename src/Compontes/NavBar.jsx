@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { img } from "../utils/getImageUrl";
 
+// ─── كومبوننت شريط التنقل ──────────────────────────────
 const NavBar = ({ theme, setTheme }) => {
+
+  // حالة فتح/إغلاق منيو الموبايل
   const [isOpen, setIsOpen] = useState(false);
 
+  // قائمة روابط التنقل
   const NavItem = [
     { title: "Home", to: "#home" },
     { title: "About me", to: "#aboutme" },
@@ -12,8 +16,10 @@ const NavBar = ({ theme, setTheme }) => {
     { title: "Contact", to: "#contact" },
   ];
 
+  // حالة القسم النشط حالياً
   const [active, setActive] = useState("");
 
+  // مراقبة الأقسام لتحديد أيها ظاهر بالشاشة
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
 
@@ -30,6 +36,7 @@ const NavBar = ({ theme, setTheme }) => {
 
     sections.forEach((section) => observer.observe(section));
 
+    // تنظيف المراقب عند إزالة الكومبوننت
     return () => observer.disconnect();
   }, []);
 
@@ -37,9 +44,10 @@ const NavBar = ({ theme, setTheme }) => {
     <div className="w-full h-[100px] fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900">
       <div className="flex items-center justify-between px-[70px] pt-[40px] text-primary dark:text-white">
 
+        {/* اسم الموقع / اللوغو */}
         <h1 className="text-2xl font-bold">Ghiath</h1>
 
-        {/* روابط الشاشات الكبيرة */}
+        {/* روابط التنقل - تظهر فقط على الشاشات الكبيرة */}
         <div className="hidden md:flex items-center gap-[24px]">
           {NavItem.map((item, index) => (
             <a
@@ -53,7 +61,7 @@ const NavBar = ({ theme, setTheme }) => {
           ))}
         </div>
 
-        {/* زر تغيير الثيم */}
+        {/* زر تغيير الثيم بين الوضع الليلي والنهاري */}
         <img
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           src={theme === "dark" ? img("Sun_fill.png") : img("moon.svg")}
@@ -61,7 +69,7 @@ const NavBar = ({ theme, setTheme }) => {
           className="w-[24px] h-[30px] cursor-pointer"
         />
 
-        {/* زر القائمة للشاشات الصغيرة */}
+        {/* زر فتح/إغلاق القائمة - يظهر فقط على الموبايل */}
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           <img
             src={
@@ -79,7 +87,7 @@ const NavBar = ({ theme, setTheme }) => {
         </button>
       </div>
 
-      {/* منيو الموبايل */}
+      {/* منيو الموبايل - يظهر فقط لما isOpen تكون true */}
       {isOpen && (
         <div className="md:hidden fixed right-0 mt-6 w-[35%] bg-white dark:bg-gray-900 dark:text-white flex flex-col text-center gap-4 px-4 pb-4 shadow-lg">
           {NavItem.map((item, index) => (
