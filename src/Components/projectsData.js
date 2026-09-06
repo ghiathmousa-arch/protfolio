@@ -22,7 +22,6 @@ const projectsData = [
   {
     id: 8,
     title: "MediLink",
-    tag: "Graduation Project (2026)",
     subtitle: "Next.js · TypeScript · Tailwind CSS · PostgreSQL · Prisma",
     img: img("medilink.jpg"),
     icon: img("card.png"),
@@ -35,7 +34,6 @@ const projectsData = [
   {
     id: 9,
     title: "LearnWise",
-    tag: "Graduation Project (2026)",
     subtitle: "Next.js · TypeScript · React · Python · FastAPI",
     img: img("learnwise.jpg"),
     icon: img("card.png"),
@@ -48,7 +46,6 @@ const projectsData = [
   {
     id: 10,
     title: "RxChef",
-    tag: "Graduation Project",
     subtitle: "Next.js · TypeScript · FastAPI · PostgreSQL · XGBoost",
     img: img("rxchef.jpg"),
     icon: img("card.png"),
@@ -61,7 +58,6 @@ const projectsData = [
   {
     id: 11,
     title: "Vehicle Platform",
-    tag: "Personal Project — Solo Full-stack",
     subtitle: "Next.js · TypeScript · PostgreSQL · Prisma",
     img: img("vehicle.jpg"),
     icon: img("card.png"),
@@ -74,7 +70,6 @@ const projectsData = [
   {
     id: 12,
     title: "PulmoScan",
-    tag: "Graduation Project — Team",
     subtitle: "React · Vite · Tailwind CSS",
     img: img("pulmoscan.jpg"),
     icon: img("card.png"),

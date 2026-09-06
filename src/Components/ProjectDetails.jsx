@@ -69,7 +69,10 @@ const ProjectDetails = ({ theme }) => {
           </div>
 
           {/* تاريخ المشروع */}
-          <p className="text-gray-500 dark:text-gray-400 mt-2">{project.tag || project.date}</p>
+          {/* الشارة - بتظهر فقط إذا المشروع إله وحدة */}
+          {project.tag && (
+            <p className="text-gray-500 dark:text-gray-400 mt-2">{project.tag}</p>
+          )}
 
           {/* وصف المشروع */}
           <p dir="auto" className="mt-6 leading-relaxed text-gray-700 dark:text-gray-300">
