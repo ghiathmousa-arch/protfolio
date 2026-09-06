@@ -59,6 +59,19 @@ const projectsData = [
   },
 
   {
+    id: 11,
+    title: "Vehicle Platform",
+    tag: "Personal Project — Solo Full-stack",
+    subtitle: "Next.js · TypeScript · PostgreSQL · Prisma",
+    img: img("vehicle.jpg"),
+    icon: img("card.png"),
+    demo: "https://vehicle-platform-six.vercel.app",
+    github: "https://github.com/ghiathmousa-arch/vehicle-platform",
+    description: "منصة بتخلي أي حدا يستعلم عن بيانات مركبة برقم اللوحة بسهولة، ومعها لوحة تحكم إدارية كاملة لإدارة البيانات.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+  },
+
+  {
     id: 1,
     title: "Trippy",
     subtitle: "React",
