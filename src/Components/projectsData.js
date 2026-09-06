@@ -72,6 +72,20 @@ const projectsData = [
   },
 
   {
+    id: 12,
+    title: "PulmoScan",
+    tag: "Graduation Project — Team",
+    subtitle: "React · Vite · Tailwind CSS",
+    img: img("pulmoscan.jpg"),
+    icon: img("card.png"),
+    demo: "https://pulmoscan-app.vercel.app",
+    // الريبو فيه أكتر من فرع - الرابط بيوجّه لفرع الواجهة الأمامية تحديداً
+    github: "https://github.com/ghiathmousa-arch/final_project/tree/frontend",
+    description: "تطبيق بيرفع المستخدم فيه صورة أشعة صدر، وبيعرضله احتمالية أولية لأربع حالات شائعة، مع تنويه واضح إنه أداة بحثية بمرحلة تجريبية ومش بديل عن تشخيص طبيب مختص.",
+    tech: ["React", "Vite", "Tailwind CSS"],
+  },
+
+  {
     id: 1,
     title: "Trippy",
     subtitle: "React",
