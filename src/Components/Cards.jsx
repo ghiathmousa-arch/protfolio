@@ -48,13 +48,28 @@ const Cards = () => {
             // الانتقال لصفحة تفاصيل المشروع عند الضغط على الكارد
             onClick={() => navigate(`/projects/${item.id}`)}
           >
-            {/* صورة المشروع */}
-            <img
-              src={item.img}
-              alt={`Screenshot of the ${item.title} project`}
-              loading="lazy"
-              className="w-full rounded-lg object-cover cursor-pointer"
-            />
+            {/* صورة المشروع + الشارة فوقها.
+                الشارة موضوعة فوق الصورة عشان ما تزيد ارتفاع البطاقة
+                وتضل كل البطاقات بنفس الشكل */}
+            <div className="relative">
+              <img
+                src={item.img}
+                alt={`Screenshot of the ${item.title} project`}
+                loading="lazy"
+                className={`w-full rounded-lg object-cover cursor-pointer ${item.featured ? "ring-2 ring-[#0C96E2]" : ""}`}
+              />
+
+              {item.tag && (
+                <span
+                  className={`absolute top-2 left-2 px-2.5 py-1 rounded-md text-[11px] font-medium backdrop-blur-sm ${item.featured
+                    ? "bg-[#0C96E2] text-white"
+                    : "bg-white/85 text-primary dark:bg-gray-900/85 dark:text-white"
+                    }`}
+                >
+                  {item.tag}
+                </span>
+              )}
+            </div>
 
             {/* معلومات المشروع + أيقونة GitHub */}
             <div className="flex items-center justify-between">
@@ -62,19 +77,22 @@ const Cards = () => {
                 {/* اسم المشروع */}
                 <h3 className="font-semibold text-primary dark:text-white">{item.title}</h3>
                 {/* وصف مختصر */}
-                <p className="text-sm text-gray-500 dark:text-gray-400">{item.subtitle}</p>
+                <p title={item.subtitle} className="text-sm text-gray-500 dark:text-gray-400 line-clamp-1">{item.subtitle}</p>
               </div>
 
-              {/* رابط GitHub للمشروع - stopPropagation عشان ما ينتقل للصفحة التفصيلية */}
-              <a
-                href={item.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${item.title} on GitHub`}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <img src={img("card.png")} alt="" className="w-7 h-7" />
-              </a>
+              {/* رابط GitHub - بيظهر فقط إذا المشروع إله ريبو عام.
+                  stopPropagation عشان ما ينتقل للصفحة التفصيلية */}
+              {item.github && (
+                <a
+                  href={item.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${item.title} on GitHub`}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <img src={img("card.png")} alt="" className="w-7 h-7" />
+                </a>
+              )}
             </div>
 
           </motion.div>

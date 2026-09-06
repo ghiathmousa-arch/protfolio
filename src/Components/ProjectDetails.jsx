@@ -69,37 +69,50 @@ const ProjectDetails = ({ theme }) => {
           </div>
 
           {/* تاريخ المشروع */}
-          <p className="text-gray-500 dark:text-gray-400 mt-2">{project.date}</p>
+          <p className="text-gray-500 dark:text-gray-400 mt-2">{project.tag || project.date}</p>
 
           {/* وصف المشروع */}
-          <p className="mt-6 leading-relaxed text-gray-700 dark:text-gray-300">
+          <p dir="auto" className="mt-6 leading-relaxed text-gray-700 dark:text-gray-300">
             {project.description}
           </p>
 
           {/* التقنيات المستخدمة */}
           <div className="mt-10 space-y-4">
 
-            {/* اللغات الأساسية */}
-            <p>
-              <span className="font-semibold">Basic Languages:</span>{" "}
-              {project.languages.join(" , ")}
-            </p>
+            {project.tech ? (
+              /* المشاريع الجديدة: قائمة تقنيات وحدة */
+              <p>
+                <span className="font-semibold">Tech Stack:</span>{" "}
+                {project.tech.join(" , ")}
+              </p>
+            ) : (
+              <>
+                {/* اللغات الأساسية */}
+                <p>
+                  <span className="font-semibold">Basic Languages:</span>{" "}
+                  {project.languages.join(" , ")}
+                </p>
 
-            {/* الفريموورك - يعرض None إذا ما في */}
-            <p>
-              <span className="font-semibold">Framework:</span>{" "}
-              {project.frameworks.length > 0 ? project.frameworks.join(" , ") : "None"}
-            </p>
+                {/* الفريموورك - يعرض None إذا ما في */}
+                <p>
+                  <span className="font-semibold">Framework:</span>{" "}
+                  {project.frameworks.length > 0 ? project.frameworks.join(" , ") : "None"}
+                </p>
 
-            {/* المكتبات - يعرض None إذا ما في */}
-            <p>
-              <span className="font-semibold">Libraries:</span>{" "}
-              {project.libraries.length > 0 ? project.libraries.join(" , ") : "None"}
-            </p>
+                {/* المكتبات - يعرض None إذا ما في */}
+                <p>
+                  <span className="font-semibold">Libraries:</span>{" "}
+                  {project.libraries.length > 0 ? project.libraries.join(" , ") : "None"}
+                </p>
+              </>
+            )}
           </div>
 
           {/* زر الانتقال لصفحة GitHub */}
-          <Button text="Github Repo" href={project.github} target="_blank" className="mt-5" />
+          {/* زر GitHub - بيظهر فقط إذا المشروع إله ريبو عام */}
+          {project.github && (
+            <Button text="Github Repo" href={project.github} target="_blank" className="mt-5" />
+          )}
         </div>
       </div>
 

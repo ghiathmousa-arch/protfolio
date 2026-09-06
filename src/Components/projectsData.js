@@ -2,6 +2,62 @@ import { img } from "../utils/getImageUrl";
 
 const projectsData = [
 
+  // ملاحظة: الترتيب هون هو ترتيب العرض بالموقع.
+  // الـ id مستقل عن الترتيب عشان روابط /projects/:id القديمة ما تنكسر.
+
+  {
+    id: 7,
+    title: "Real Estate Platform",
+    tag: "Team Project — Real Client",
+    featured: true,
+    subtitle: "React · Node.js · MongoDB",
+    img: img("realestate.jpg"),
+    icon: img("card.png"),
+    demo: "https://real-state-six-chi.vercel.app",
+    github: null,
+    description: "منصة عقارية بتساعد الزوار يلاقوا العقار المناسب بسهولة، عن طريق بحث وفلترة متقدمة ومعلومات موثوقة عن كل عقار.",
+    tech: ["React", "Node.js", "MongoDB"],
+  },
+
+  {
+    id: 8,
+    title: "MediLink",
+    tag: "Graduation Project (2026)",
+    subtitle: "Next.js · TypeScript · Tailwind CSS · PostgreSQL · Prisma",
+    img: img("medilink.jpg"),
+    icon: img("card.png"),
+    demo: "https://medilink-omega-murex.vercel.app",
+    github: "https://github.com/ghiathmousa-arch/MediLink",
+    description: "نظام يجمع الملف الصحي الكامل للمريض بمكان واحد، وبينبّه تلقائياً لو في تعارض بين الأدوية أو حساسية عند المريض.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma"],
+  },
+
+  {
+    id: 9,
+    title: "LearnWise",
+    tag: "Graduation Project (2026)",
+    subtitle: "Next.js · TypeScript · React · Python · FastAPI",
+    img: img("learnwise.jpg"),
+    icon: img("card.png"),
+    demo: "https://learnwise-six.vercel.app",
+    github: "https://github.com/ghiathmousa-arch/learnwise",
+    description: "منصة بتقترح على المستخدم محتوى تعليمي مشابه لاهتماماته بذكاء، وبتدعم البحث بالعربي والإنجليزي مع بعض.",
+    tech: ["Next.js", "TypeScript", "React", "Python", "FastAPI"],
+  },
+
+  {
+    id: 10,
+    title: "RxChef",
+    tag: "Graduation Project",
+    subtitle: "Next.js · TypeScript · FastAPI · PostgreSQL · XGBoost",
+    img: img("rxchef.jpg"),
+    icon: img("card.png"),
+    demo: "https://rx-chef.vercel.app",
+    github: "https://github.com/ghiathmousa-arch/RxChef",
+    description: "نظام بيتحقق من وجود تعارض خطير بين دوائين قبل ما ياخدهم المستخدم مع بعض، وبيقترح بدائل آمنة بمكانهم.",
+    tech: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "XGBoost"],
+  },
+
   {
     id: 1,
     title: "Trippy",

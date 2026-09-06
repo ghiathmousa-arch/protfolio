@@ -121,18 +121,21 @@ const ProjectsSlider = () => {
                     {/* اسم المشروع والتقنية */}
                     <div>
                       <h3 className="font-semibold">{item.title}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{item.subtitle}</p>
+                      <p title={item.subtitle} className="text-sm text-gray-500 dark:text-gray-400 line-clamp-1">{item.subtitle}</p>
                     </div>
 
-                    {/* أيقونة GitHub - تفتح الريبو بتاب جديد */}
-                    <a
-                      href={item.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()} // وقف الكليك عشان ما يفتح صفحة التفاصيل
-                    >
-                      <img src={img("card.png")} alt="" className="w-7 h-7" />
-                    </a>
+                    {/* أيقونة GitHub - بتظهر فقط إذا في ريبو عام */}
+                    {item.github && (
+                      <a
+                        href={item.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${item.title} on GitHub`}
+                        onClick={(e) => e.stopPropagation()} // وقف الكليك عشان ما يفتح صفحة التفاصيل
+                      >
+                        <img src={img("card.png")} alt="" className="w-7 h-7" />
+                      </a>
+                    )}
                   </div>
                 </div>
               );
