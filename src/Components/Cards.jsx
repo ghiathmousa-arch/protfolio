@@ -36,7 +36,7 @@ const Cards = () => {
         {projectsData.map((item, index) => (
           <motion.div
             key={index}
-            className="flex flex-col gap-3 md:h-80 cursor-pointer"
+            className="flex flex-col gap-3 cursor-pointer"
             // أنيميشن الدخول: كل كارد يدخل من الأسفل بتأخير متدرج
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -56,7 +56,7 @@ const Cards = () => {
                 src={item.img}
                 alt={`Screenshot of the ${item.title} project`}
                 loading="lazy"
-                className={`w-full rounded-lg object-cover cursor-pointer ${item.featured ? "ring-2 ring-[#0C96E2]" : ""}`}
+                className={`w-full aspect-[16/10] rounded-lg object-cover cursor-pointer ${item.featured ? "ring-2 ring-[#0C96E2]" : ""}`}
               />
 
               {item.tag && (
@@ -94,6 +94,11 @@ const Cards = () => {
                 </a>
               )}
             </div>
+
+            {/* وصف مختصر - سطرين بالضبط عشان كل البطاقات تضل بنفس الارتفاع */}
+            <p className="text-sm leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-2">
+              {item.description}
+            </p>
 
           </motion.div>
         ))}

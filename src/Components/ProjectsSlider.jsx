@@ -110,7 +110,7 @@ const ProjectsSlider = () => {
                     src={item.img}
                     alt={item.title}
                     loading="lazy"
-                    className="w-full rounded-lg object-cover h-[200px]"
+                    className="w-full rounded-lg object-cover aspect-[16/10] h-auto"
                   />
 
                   {/* الجزء السفلي - stopPropagation عشان الكليك هون ما يفتح صفحة التفاصيل */}
@@ -137,6 +137,11 @@ const ProjectsSlider = () => {
                       </a>
                     )}
                   </div>
+
+                  {/* نفس وصف بطاقة قسم المشاريع */}
+                  <p className="text-sm leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-2">
+                    {item.description}
+                  </p>
                 </div>
               );
             })}

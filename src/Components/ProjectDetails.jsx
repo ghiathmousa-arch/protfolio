@@ -79,36 +79,15 @@ const ProjectDetails = ({ theme }) => {
           {/* التقنيات المستخدمة */}
           <div className="mt-10 space-y-4">
 
-            {project.tech ? (
-              /* المشاريع الجديدة: قائمة تقنيات وحدة */
+            {/* التقنيات المستخدمة */}
+            {project.tech && (
               <p>
                 <span className="font-semibold">Tech Stack:</span>{" "}
                 {project.tech.join(" , ")}
               </p>
-            ) : (
-              <>
-                {/* اللغات الأساسية */}
-                <p>
-                  <span className="font-semibold">Basic Languages:</span>{" "}
-                  {project.languages.join(" , ")}
-                </p>
-
-                {/* الفريموورك - يعرض None إذا ما في */}
-                <p>
-                  <span className="font-semibold">Framework:</span>{" "}
-                  {project.frameworks.length > 0 ? project.frameworks.join(" , ") : "None"}
-                </p>
-
-                {/* المكتبات - يعرض None إذا ما في */}
-                <p>
-                  <span className="font-semibold">Libraries:</span>{" "}
-                  {project.libraries.length > 0 ? project.libraries.join(" , ") : "None"}
-                </p>
-              </>
             )}
           </div>
 
-          {/* زر الانتقال لصفحة GitHub */}
           {/* زر GitHub - بيظهر فقط إذا المشروع إله ريبو عام */}
           {project.github && (
             <Button text="Github Repo" href={project.github} target="_blank" className="mt-5" />
