@@ -1,7 +1,8 @@
 {
-  "name": "vite-project",
+  "name": "ghiath-mousa-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Personal portfolio of Ghiath Mousa, Full-stack Developer.",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -24,6 +25,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
     "eslint": "^9.39.1",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "gh-pages": "^6.3.0",

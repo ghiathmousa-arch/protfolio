@@ -5,7 +5,7 @@ import { img } from "../utils/getImageUrl";
 import Button from "./Button";
 
 // ─── كومبوننت قسم المشاريع ─────────────────────────────
-const Cards = ({ theme }) => {
+const Cards = () => {
   // للتنقل إلى صفحة تفاصيل المشروع عند الضغط على الكارد
   const navigate = useNavigate();
 
@@ -17,10 +17,10 @@ const Cards = ({ theme }) => {
 
       {/* السطر العلوي: العنوان الكبير + زر GitHub */}
       <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mt-2 mb-10">
-        <h1 className="md:w-90 text-2xl md:text-4xl font-semibold">
+        <h2 className="md:w-90 text-2xl md:text-4xl font-semibold">
           My Creative Works Latest
           <span className="text-[#0C96E2]"> Projects</span>
-        </h1>
+        </h2>
 
         {/* زر الانتقال لصفحة GitHub */}
         <Button
@@ -28,7 +28,6 @@ const Cards = ({ theme }) => {
           target="_blank"
           href="https://github.com/ghiathmousa-arch"
           icon={img("topandleft.png")}
-          onClick={(e) => e.stopPropagation()}
         />
       </div>
 
@@ -50,7 +49,12 @@ const Cards = ({ theme }) => {
             onClick={() => navigate(`/projects/${item.id}`)}
           >
             {/* صورة المشروع */}
-            <img src={item.img} alt={item.title} className="w-full rounded-lg object-cover cursor-pointer" />
+            <img
+              src={item.img}
+              alt={`Screenshot of the ${item.title} project`}
+              loading="lazy"
+              className="w-full rounded-lg object-cover cursor-pointer"
+            />
 
             {/* معلومات المشروع + أيقونة GitHub */}
             <div className="flex items-center justify-between">
@@ -62,7 +66,13 @@ const Cards = ({ theme }) => {
               </div>
 
               {/* رابط GitHub للمشروع - stopPropagation عشان ما ينتقل للصفحة التفصيلية */}
-              <a href={item.github} target="_blank" onClick={(e) => e.stopPropagation()}>
+              <a
+                href={item.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${item.title} on GitHub`}
+                onClick={(e) => e.stopPropagation()}
+              >
                 <img src={img("card.png")} alt="" className="w-7 h-7" />
               </a>
             </div>

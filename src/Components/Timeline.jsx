@@ -3,20 +3,34 @@ import { img } from "../utils/getImageUrl";
 // ─── بيانات التايملاين (مسيرة التعلم) ─────────────────
 const timelineData = [
   {
+    period: "2025",
     title: "Self-Taught Frontend Developer",
     subtitle: "Started learning web development independently, mastering HTML, CSS, and JavaScript through online resources and personal projects."
   },
   {
+    period: "Late 2025",
     title: "Bootstrap & Responsive Design",
     subtitle: "Learned Bootstrap framework and responsive design principles, building multiple projects with clean and mobile-friendly layouts."
   },
   {
+    period: "Early 2026",
     title: "React Developer",
     subtitle: "Dived into React, learning components, hooks, React Router, and state management while building real-world projects."
   },
   {
+    period: "2026 — Present",
     title: "Tailwind CSS & Modern UI",
     subtitle: "Adopted Tailwind CSS and Framer Motion to build modern, animated, and polished user interfaces."
+  },
+  {
+    period: "2026 — Present",
+    title: "React + TypeScript",
+    subtitle: "Mastered React with TypeScript and built complete projects, including a full admin dashboard and a real project for an actual client."
+  },
+  {
+    period: "2026 — Present",
+    title: "Next.js — Full-stack Development",
+    subtitle: "Moved into full-stack development with Next.js, building complete production systems with real databases, authentication, and protected APIs."
   },
 ];
 
@@ -44,6 +58,8 @@ const TimelineItem = ({ item }) => (
 
     {/* الجانب الأيمن: العنوان والوصف */}
     <div className="pb-10">
+      {/* الفترة الزمنية */}
+      <p className="text-xs font-medium text-[#0C96E2] mb-1">{item.period}</p>
       <h3 className="font-semibold text-primary dark:text-white mb-1">{item.title}</h3>
       <p className="text-sm text-gray-500 dark:text-gray-400">{item.subtitle}</p>
     </div>
@@ -65,30 +81,31 @@ const Timeline = () => {
       <img
         src={img("top left image.svg")}
         alt=""
+        loading="lazy"
         className="hidden md:block absolute top-0 right-0"
       />
 
       {/* عنوان القسم */}
       <div className="text-center mb-12">
         <h3 className="text-[20px] font-medium text-[#0C96E2] mb-2">Education and Experience</h3>
-        <h1 className="text-3xl md:text-[40px] font-semibold text-primary dark:text-white">
+        <h2 className="text-3xl md:text-[40px] font-semibold text-primary dark:text-white">
           Education & Experience
-        </h1>
+        </h2>
       </div>
 
       {/* شبكة من عمودين لعرض عناصر التايملاين */}
       <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12">
 
-        {/* العمود الأول: العنصران الأول والثاني */}
+        {/* العمود الأول: أول ثلاث عناصر */}
         <div className="flex flex-col">
-          {timelineData.slice(0, 2).map((item, index) => (
+          {timelineData.slice(0, 3).map((item, index) => (
             <TimelineItem key={index} item={item} />
           ))}
         </div>
 
-        {/* العمود الثاني: العنصران الثالث والرابع */}
+        {/* العمود الثاني: آخر ثلاث عناصر */}
         <div className="flex flex-col">
-          {timelineData.slice(2, 4).map((item, index) => (
+          {timelineData.slice(3, 6).map((item, index) => (
             <TimelineItem key={index} item={item} />
           ))}
         </div>
@@ -106,6 +123,8 @@ const Timeline = () => {
         {/* زر الرجوع لأعلى الصفحة */}
         <button
           onClick={scrollToTop}
+          type="button"
+          aria-label="Back to top"
           className="w-[50px] h-[50px] rounded-full shadow-[0px_4px_4px_0px_#00000040] flex items-center justify-center ml-auto"
           style={{ backgroundColor: "#0C96E2" }}
         >

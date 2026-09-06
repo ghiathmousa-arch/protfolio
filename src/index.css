@@ -11,5 +11,17 @@ html, body {
 }
 html {
   scroll-behavior: smooth;
-  scroll-timeline: auto;
+  /* ارتفاع الـ NavBar الثابت — عشان الأقسام ما تختفي تحته عند النزول عليها */
+  scroll-padding-top: 120px;
+}
+
+section[id] {
+  scroll-margin-top: 120px;
+}
+
+/* احترام إعداد "تقليل الحركة" بجهاز المستخدم */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

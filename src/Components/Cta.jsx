@@ -13,7 +13,7 @@ const Cta = () => {
       transition={{ duration: 0.7 }}
     >
       <div
-        className="relative w-[90%] md:w-[75%] rounded-5xl md:px-16 md:py-20 overflow-hidden inset-1 mx-auto"
+        className="relative w-[90%] md:w-[75%] md:px-16 md:py-20 overflow-hidden inset-1 mx-auto"
         style={{ backgroundColor: "#0C96E2", borderRadius: 32 }}
       >
         {/* صورة الخلفية */}

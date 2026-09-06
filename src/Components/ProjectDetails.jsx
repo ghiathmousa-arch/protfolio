@@ -21,7 +21,13 @@ const ProjectDetails = ({ theme }) => {
   const project = projectsData.find((item) => item.id === Number(id));
 
   // إذا ما لقى المشروع اعرض رسالة خطأ
-  if (!project) return <div className="text-white p-10">Project not found</div>;
+  if (!project) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center px-6 pt-[140px] pb-20 text-primary dark:text-white bg-white dark:bg-gray-900">
+        <p className="text-xl font-semibold">Project not found</p>
+      </div>
+    );
+  }
 
   return (
     <section className="px-6 md:px-20 py-25 text-primary dark:text-white">
@@ -47,7 +53,12 @@ const ProjectDetails = ({ theme }) => {
 
             {/* أيقونة تفتح Demo أو Repo بتاب جديد */}
             <div>
-              <a href={project.demo} target="_blank">
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open the ${project.title} live demo`}
+              >
                 <img
                   src={project.icon}
                   alt=""
@@ -96,7 +107,7 @@ const ProjectDetails = ({ theme }) => {
       <Dot theme={theme} />
 
       {/* سلايدر المشاريع الأخرى */}
-      <ProjectsSlider theme={theme} />
+      <ProjectsSlider />
 
       {/* الفوتر */}
       <Footer />

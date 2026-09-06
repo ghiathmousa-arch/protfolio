@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import projectsData from "./projectsData"; // بيانات المشاريع
 import { img } from "../utils/getImageUrl"; // دالة تجلب الصور
 
-const ProjectsSlider = ({ theme }) => {
+const ProjectsSlider = () => {
   // الإندكس الحالي للمشروع اللي عم يتعرض
   const [current, setCurrent] = useState(0);
 
@@ -47,9 +47,9 @@ const ProjectsSlider = ({ theme }) => {
         {/* نص العنوان */}
         <div>
           <h3 className="text-[#0C96E2] text-sm md:text-base">Portfolio</h3>
-          <h1 className="text-2xl md:text-4xl font-semibold mt-1">
+          <h2 className="text-2xl md:text-4xl font-semibold mt-1">
             The Best <span className="text-[#0C96E2]">Projects</span>
-          </h1>
+          </h2>
         </div>
 
         {/* أزرار السابق والتالي */}
@@ -57,6 +57,8 @@ const ProjectsSlider = ({ theme }) => {
           {/* زر السابق */}
           <button
             onClick={prev}
+            type="button"
+            aria-label="Previous projects"
             className="w-9 h-9 rounded-full border border-[#0C96E2] flex items-center justify-center hover:bg-[#0C96E2] transition-all group"
           >
             <img src={img("leftslider.png")} alt="" className="brightness-0 group-hover:invert" />
@@ -65,6 +67,8 @@ const ProjectsSlider = ({ theme }) => {
           {/* زر التالي */}
           <button
             onClick={next}
+            type="button"
+            aria-label="Next projects"
             className="w-9 h-9 rounded-full border border-[#0C96E2] flex items-center justify-center hover:bg-[#0C96E2] transition-all group"
           >
             <img src={img("rightslider.png")} alt="" className="brightness-0 group-hover:invert" />
@@ -105,6 +109,7 @@ const ProjectsSlider = ({ theme }) => {
                   <img
                     src={item.img}
                     alt={item.title}
+                    loading="lazy"
                     className="w-full rounded-lg object-cover h-[200px]"
                   />
 

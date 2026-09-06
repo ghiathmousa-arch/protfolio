@@ -39,7 +39,7 @@ const ProgressBar = ({ skill, percentage }) => {
 }
 
 // ─── كومبوننت قسم About Me ─────────────────────────────
-const About = ({ theme }) => {
+const About = () => {
   return (
     <section id="aboutme" className="w-full px-8 py-16 overflow-hidden bg-white dark:bg-gray-900">
       <div className="max-w-6xl md:mx-auto flex flex-col md:flex-row items-center gap-12">
@@ -52,7 +52,7 @@ const About = ({ theme }) => {
           transition={{ duration: 0.8 }}
           className="flex"
         >
-          <img src={img("about.png")} alt="" />
+          <img src={img("about.png")} alt="Illustration of a developer at work" width={510} height={530} loading="lazy" />
         </motion.div>
 
         {/* المحتوى الجانب الأيمن - يدخل من اليمين */}
@@ -68,7 +68,7 @@ const About = ({ theme }) => {
 
           {/* النص التعريفي */}
           <p className="text-gray-500 dark:text-gray-400 text-sm">
-            I'm a Frontend Developer who loves building beautiful and responsive web interfaces. I started with HTML & CSS, then leveled up with Bootstrap, JavaScript, React, and Tailwind CSS.
+            I'm a Full-stack Developer who loves building beautiful, responsive web interfaces — and the backends that power them. I started with HTML & CSS, then leveled up with Bootstrap, JavaScript, React, and Tailwind CSS, and now work across the full stack.
           </p>
 
           {/* أشرطة المهارات */}
@@ -76,6 +76,10 @@ const About = ({ theme }) => {
           <ProgressBar skill="CSS3" percentage={85} />
           <ProgressBar skill="Javascript" percentage={95} />
           <ProgressBar skill="React" percentage={90} />
+          <ProgressBar skill="TypeScript" percentage={88} />
+          <ProgressBar skill="Next.js" percentage={90} />
+          <ProgressBar skill="Tailwind CSS / Bootstrap" percentage={92} />
+          <ProgressBar skill="SQL / NoSQL" percentage={85} />
         </motion.div>
 
       </div>

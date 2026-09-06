@@ -1,45 +1,60 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import NavBar from './Compontes/NavBar'
-import './index.css'
-import useTheme from './Compontes/useTheme';
-import Hero from './Compontes/Hero';
-import Dot from './Compontes/Dot';
-import About from './Compontes/About';
-import Timeline from './Compontes/Timeline ';
-import Cta from './Compontes/Cta';
-import Cards from './Compontes/Cards';
-import Contact from './Compontes/Contact';
-import Footer from './Compontes/Footer';
-import ProjectDetails from './Compontes/ProjectDetails';
+import NavBar from './Components/NavBar'
+import useTheme, { getInitialTheme } from './Components/useTheme'
+import Hero from './Components/Hero'
+import Dot from './Components/Dot'
+import About from './Components/About'
+import Timeline from './Components/Timeline'
+import Cta from './Components/Cta'
+import Cards from './Components/Cards'
+import Contact from './Components/Contact'
+import Footer from './Components/Footer'
+import ProjectDetails from './Components/ProjectDetails'
+import NotFound from './Components/NotFound'
+import Preloader from './Components/Preloader'
 
 function App() {
-  const [theme, setTheme] = useState("light");
-  useTheme(theme, setTheme)
+  // القراءة الأولية بتصير قبل أول رسم → بلا وميض أبيض بالوضع الداكن
+  const [theme, setTheme] = useState(getInitialTheme)
+  useTheme(theme)
+
+  // بيصير true لما تخلص شاشة التحميل → وقتها بيبلش أنيميشن الهيرو
+  const [ready, setReady] = useState(false)
+  const handleReady = useCallback(() => setReady(true), [])
 
   return (
-    <div className={theme === "dark" ? "dark bg-gray-900" : "bg-white"}>
-      <NavBar theme={theme} setTheme={setTheme} />
+    <>
+      {/* شاشة التحميل الأولى - بتختفي لحالها بأقل من ثانية ونص */}
+      <Preloader onDone={handleReady} />
 
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Hero theme={theme} setTheme={setTheme} />
-            <Dot theme={theme} />
-            <About theme={theme} />
-            <Timeline />
-            <Cta />
-            <Cards theme={theme} />
-            <Contact theme={theme} />
-            <Footer theme={theme} />
+      {/* الكلاس "dark" بينضاف على الـ <html> من داخل useTheme،
+          فهون منكتفي بلون الخلفية بس بدون تكرار الكلاس */}
+      <div className="bg-white dark:bg-gray-900">
+        <NavBar theme={theme} setTheme={setTheme} />
+
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero ready={ready} />
+              <Dot theme={theme} />
+              <About />
+              <Timeline />
+              <Cta />
+              <Cards />
+              <Contact />
+              <Footer />
           </>
         } />
 
         <Route path="/projects/:id" element={<ProjectDetails theme={theme} />} />
+
+        {/* أي مسار غير معروف */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
+    </>
   )
 }
-
 
 export default App
