@@ -50,9 +50,18 @@ const About = () => {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false }}
           transition={{ duration: 0.8 }}
-          className="flex"
+          className="w-full max-w-[510px] flex justify-center shrink-0"
         >
-          <img src={img("about.png")} alt="Illustration of a developer at work" width={510} height={530} loading="lazy" />
+          {/* max-w-full ضرورية - بدونها الـ width={510} بتفرض عرضها على الموبايل
+              وبتقص الصورة وأشرطة المهارات معها */}
+          <img
+            src={img("about.png")}
+            alt="Illustration of a developer at work"
+            width={510}
+            height={530}
+            loading="lazy"
+            className="w-full max-w-full h-auto"
+          />
         </motion.div>
 
         {/* المحتوى الجانب الأيمن - يدخل من اليمين */}
@@ -61,7 +70,7 @@ const About = () => {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false }}
           transition={{ duration: 0.8 }}
-          className="flex-1 flex flex-col gap-6"
+          className="w-full min-w-0 flex-1 flex flex-col gap-6"
         >
           {/* العنوان */}
           <h2 className="text-3xl font-bold text-primary dark:text-white">About Me</h2>
