@@ -2,11 +2,10 @@ import { img } from "../utils/getImageUrl";
 
 const projectsData = [
 
-  // ملاحظة: الترتيب هون هو ترتيب العرض بالموقع.
-  // الـ id مستقل عن الترتيب عشان روابط /projects/:id القديمة ما تنكسر.
+  // الترتيب هون هو ترتيب العرض بالموقع، والـ id بيطابقه.
 
   {
-    id: 7,
+    id: 1,
     title: "Real Estate Platform",
     tag: "Team Project — Real Client",
     featured: true,
@@ -20,7 +19,7 @@ const projectsData = [
   },
 
   {
-    id: 8,
+    id: 2,
     title: "MediLink",
     subtitle: "Next.js · TypeScript · Tailwind CSS · PostgreSQL · Prisma",
     img: img("medilink.jpg"),
@@ -32,7 +31,7 @@ const projectsData = [
   },
 
   {
-    id: 9,
+    id: 3,
     title: "LearnWise",
     subtitle: "Next.js · TypeScript · React · Python · FastAPI",
     img: img("learnwise.jpg"),
@@ -44,7 +43,7 @@ const projectsData = [
   },
 
   {
-    id: 10,
+    id: 4,
     title: "RxChef",
     subtitle: "Next.js · TypeScript · FastAPI · PostgreSQL · XGBoost",
     img: img("rxchef.jpg"),
@@ -56,7 +55,7 @@ const projectsData = [
   },
 
   {
-    id: 11,
+    id: 5,
     title: "Vehicle Platform",
     subtitle: "Next.js · TypeScript · PostgreSQL · Prisma",
     img: img("vehicle.jpg"),
@@ -68,7 +67,7 @@ const projectsData = [
   },
 
   {
-    id: 12,
+    id: 6,
     title: "PulmoScan",
     subtitle: "React · Vite · Tailwind CSS",
     img: img("pulmoscan.jpg"),
